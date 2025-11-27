@@ -28,24 +28,24 @@ const App: React.FC = () => {
         <Services />
         
         {/* Trust/Stats Section */}
-        <section className="py-12 bg-accent-cyan">
+        <section className="py-12 bg-brand-orange">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-black/10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-black/20">
               <div>
-                <p className="text-3xl font-bold text-brand-dark">100+</p>
-                <p className="text-brand-dark/80 font-medium">Audits Completed</p>
+                <p className="text-4xl font-impact text-black">100+</p>
+                <p className="text-black/80 font-bold uppercase tracking-wider text-sm mt-1">Audits Completed</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-brand-dark">€0</p>
-                <p className="text-brand-dark/80 font-medium">Client Fines</p>
+                <p className="text-4xl font-impact text-black">€0</p>
+                <p className="text-black/80 font-bold uppercase tracking-wider text-sm mt-1">Client Fines</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-brand-dark">24/7</p>
-                <p className="text-brand-dark/80 font-medium">Support</p>
+                <p className="text-4xl font-impact text-black">24/7</p>
+                <p className="text-black/80 font-bold uppercase tracking-wider text-sm mt-1">Support</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-brand-dark">100%</p>
-                <p className="text-brand-dark/80 font-medium">Compliance Rate</p>
+                <p className="text-4xl font-impact text-black">100%</p>
+                <p className="text-black/80 font-bold uppercase tracking-wider text-sm mt-1">Compliance Rate</p>
               </div>
             </div>
           </div>

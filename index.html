@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NIS2 Security Consultancy</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
+              sans: ['Arial', 'Helvetica', 'sans-serif'],
+              impact: ['Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'sans-serif'],
             },
             colors: {
-              'brand-dark': '#0f172a',
-              'brand-blue': '#1e293b',
-              'accent-cyan': '#06b6d4',
-              'accent-hover': '#0891b2',
+              'brand-dark': '#000000',
+              'brand-gray': '#121212',
+              'brand-orange': '#ff5e00',
+              'orange-hover': '#cc4b00',
             }
           }
         }
@@ -32,6 +32,10 @@
           -ms-overflow-style: none;
           scrollbar-width: none;
       }
+      /* Ensure inputs don't auto-zoom on mobile */
+      input, select, textarea {
+        font-size: 16px;
+      }
     </style>
   <script type="importmap">
 {
@@ -45,7 +49,7 @@
 }
 </script>
 </head>
-  <body class="bg-brand-dark text-slate-200 antialiased selection:bg-accent-cyan selection:text-white">
+  <body class="bg-brand-dark text-slate-200 antialiased selection:bg-brand-orange selection:text-black">
     <div id="root"></div>
   </body>
 </html>

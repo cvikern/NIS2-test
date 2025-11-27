@@ -54,15 +54,15 @@ export const ChatWidget: React.FC = () => {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       {/* Chat Window */}
       {isOpen && (
-        <div className="mb-4 w-[90vw] sm:w-96 h-[500px] bg-brand-blue border border-slate-700 rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-fade-in-up">
+        <div className="mb-4 w-[90vw] sm:w-96 h-[500px] bg-brand-gray border border-white/10 rounded-sm shadow-2xl flex flex-col overflow-hidden animate-fade-in-up">
           {/* Header */}
-          <div className="bg-slate-800 p-4 flex justify-between items-center border-b border-slate-700">
+          <div className="bg-black p-4 flex justify-between items-center border-b border-white/10">
             <div className="flex items-center gap-2">
-              <div className="p-1.5 bg-accent-cyan rounded-full">
+              <div className="p-1.5 bg-brand-orange rounded-sm">
                 <Bot size={18} className="text-black" />
               </div>
               <div>
-                <h3 className="font-semibold text-white">NIS2 Assistant</h3>
+                <h3 className="font-impact uppercase tracking-wide text-white">NIS2 Assistant</h3>
                 <p className="text-xs text-slate-400">Powered by Gemini AI</p>
               </div>
             </div>
@@ -75,23 +75,23 @@ export const ChatWidget: React.FC = () => {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-brand-dark/50">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-black/50">
             {messages.map((msg, idx) => (
               <div 
                 key={idx} 
                 className={`flex gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
               >
                 <div className={`
-                  w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0
-                  ${msg.role === 'user' ? 'bg-slate-700' : 'bg-accent-cyan/20'}
+                  w-8 h-8 rounded-sm flex items-center justify-center flex-shrink-0
+                  ${msg.role === 'user' ? 'bg-zinc-800' : 'bg-brand-orange/20'}
                 `}>
-                  {msg.role === 'user' ? <User size={16} /> : <Bot size={16} className="text-accent-cyan" />}
+                  {msg.role === 'user' ? <User size={16} /> : <Bot size={16} className="text-brand-orange" />}
                 </div>
                 <div className={`
-                  p-3 rounded-lg max-w-[80%] text-sm leading-relaxed
+                  p-3 rounded-sm max-w-[80%] text-sm leading-relaxed
                   ${msg.role === 'user' 
-                    ? 'bg-slate-700 text-white rounded-tr-none' 
-                    : 'bg-brand-blue border border-slate-700 text-slate-200 rounded-tl-none'}
+                    ? 'bg-zinc-800 text-white' 
+                    : 'bg-brand-gray border border-white/10 text-slate-200'}
                   ${msg.isError ? 'text-red-400 border-red-900/50' : ''}
                 `}>
                   {msg.text}
@@ -100,10 +100,10 @@ export const ChatWidget: React.FC = () => {
             ))}
             {isLoading && messages[messages.length - 1]?.role === 'user' && (
                <div className="flex gap-3">
-                 <div className="w-8 h-8 rounded-full bg-accent-cyan/20 flex items-center justify-center flex-shrink-0">
-                   <Bot size={16} className="text-accent-cyan" />
+                 <div className="w-8 h-8 rounded-sm bg-brand-orange/20 flex items-center justify-center flex-shrink-0">
+                   <Bot size={16} className="text-brand-orange" />
                  </div>
-                 <div className="bg-brand-blue border border-slate-700 p-3 rounded-lg rounded-tl-none">
+                 <div className="bg-brand-gray border border-white/10 p-3 rounded-sm">
                    <div className="flex gap-1">
                      <div className="w-2 h-2 bg-slate-500 rounded-full animate-bounce"></div>
                      <div className="w-2 h-2 bg-slate-500 rounded-full animate-bounce delay-75"></div>
@@ -116,19 +116,19 @@ export const ChatWidget: React.FC = () => {
           </div>
 
           {/* Input */}
-          <form onSubmit={handleSubmit} className="p-4 bg-brand-blue border-t border-slate-700">
+          <form onSubmit={handleSubmit} className="p-4 bg-brand-gray border-t border-white/10">
             <div className="relative">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about compliance..."
-                className="w-full bg-slate-900 border border-slate-700 rounded-lg pl-4 pr-12 py-3 text-sm text-white focus:outline-none focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan transition-all"
+                className="w-full bg-black border border-white/10 rounded-sm pl-4 pr-12 py-3 text-sm text-white focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all placeholder-slate-600"
               />
               <button 
                 type="submit"
                 disabled={!input.trim() || isLoading}
-                className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 bg-accent-cyan text-black rounded-md hover:bg-accent-hover disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 bg-brand-orange text-black rounded-sm hover:bg-orange-hover disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 <Send size={16} />
               </button>
@@ -141,8 +141,8 @@ export const ChatWidget: React.FC = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`
-          p-4 rounded-full shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all duration-300 transform hover:scale-105
-          ${isOpen ? 'bg-slate-700 text-white rotate-90' : 'bg-accent-cyan text-black'}
+          p-4 rounded-full shadow-[0_0_20px_rgba(255,94,0,0.4)] transition-all duration-300 transform hover:scale-105
+          ${isOpen ? 'bg-zinc-800 text-white rotate-90' : 'bg-brand-orange text-black'}
         `}
       >
         {isOpen ? <X size={24} /> : <MessageCircle size={24} />}

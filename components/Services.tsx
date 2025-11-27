@@ -27,10 +27,10 @@ export const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-20 relative">
+    <section id="services" className="py-20 relative bg-black">
        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Compliance Solutions</h2>
+          <h2 className="text-4xl md:text-5xl font-impact uppercase text-white mb-4 tracking-wide">Our Compliance Solutions</h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
             From initial assessment to full certification, we guide you through every step of the NIS2 compliance journey.
           </p>
@@ -40,12 +40,12 @@ export const Services: React.FC = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="group p-6 bg-brand-blue rounded-xl border border-slate-800 hover:border-accent-cyan hover:shadow-[0_0_20px_rgba(6,182,212,0.1)] transition-all duration-300"
+              className="group p-6 bg-brand-gray rounded-sm border border-white/5 hover:border-brand-orange hover:shadow-[0_0_20px_rgba(255,94,0,0.1)] transition-all duration-300"
             >
-              <div className="mb-6 p-4 bg-brand-dark rounded-lg inline-block text-accent-cyan group-hover:bg-accent-cyan group-hover:text-black transition-colors">
+              <div className="mb-6 p-4 bg-black rounded-sm inline-block text-brand-orange group-hover:bg-brand-orange group-hover:text-black transition-colors">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-accent-cyan transition-colors">
+              <h3 className="text-xl font-impact uppercase tracking-wide text-white mb-3 group-hover:text-brand-orange transition-colors">
                 {service.title}
               </h3>
               <p className="text-slate-400 text-sm leading-relaxed">

@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled ? 'bg-brand-dark/90 backdrop-blur-md border-b border-slate-800 py-3' : 'bg-transparent py-6'
+        isScrolled ? 'bg-black/90 backdrop-blur-md border-b border-white/10 py-3' : 'bg-transparent py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,9 +31,9 @@ export const Header: React.FC = () => {
           
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <ShieldCheck className="text-accent-cyan w-8 h-8" />
-            <span className="text-xl font-bold tracking-tight text-white">
-              Secure<span className="text-accent-cyan">NIS2</span>
+            <ShieldCheck className="text-brand-orange w-8 h-8" />
+            <span className="text-2xl font-impact tracking-wider text-white uppercase">
+              Secure<span className="text-brand-orange">NIS2</span>
             </span>
           </div>
 
@@ -43,7 +43,7 @@ export const Header: React.FC = () => {
               <a 
                 key={link.name} 
                 href={link.href}
-                className="text-sm font-medium text-slate-300 hover:text-accent-cyan transition-colors"
+                className="text-sm font-bold uppercase tracking-widest text-slate-300 hover:text-brand-orange transition-colors"
               >
                 {link.name}
               </a>
@@ -67,13 +67,13 @@ export const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-brand-dark border-b border-slate-800 p-4 shadow-xl">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-black border-b border-slate-800 p-4 shadow-xl">
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
                 href={link.href}
-                className="text-base font-medium text-slate-300 hover:text-accent-cyan"
+                className="text-lg font-impact uppercase tracking-wide text-slate-300 hover:text-brand-orange"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
